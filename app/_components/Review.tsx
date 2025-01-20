@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
 import MarkdownPreview from "@uiw/react-markdown-preview";
-const Review = () => {
+const Review = ({ review }: { review: string }) => {
   return (
-    <div className="h-full W-6/12 relative">
+    <div className="h-full w-6/12 relative">
       <MarkdownPreview
-        source={"Review will be here"}
+        source={review}
         style={{ fontSize: "30px", height: "100vh" }}
       />
     </div>

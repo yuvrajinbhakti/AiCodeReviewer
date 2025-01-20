@@ -3,11 +3,10 @@ import React from "react";
 // import CodeMirror from "@uiw/react-codemirror";
 import ReactCodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
-import { jsx } from "react/jsx-runtime";
 
 const Editor = () => {
   return (
-    <div>
+    <div className="h-full W-6/12 relative">
       <ReactCodeMirror
         minHeight="100vh"
         value=" Hello World! "

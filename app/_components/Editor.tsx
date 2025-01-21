@@ -6,8 +6,10 @@ import ReactCodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 
 const Editor = ({
+  isGenerating,
   onGenerateReview,
 }: {
+  isGenerating: boolean;
   onGenerateReview(code: string): void;
 }) => {
   const [code, setCode] = useState("");
@@ -16,7 +18,8 @@ const Editor = ({
   return (
     <div className="h-full w-6/12 relative">
       <button
-        onClick={onGenerateReview}
+        disabled={isGenerating}
+        onClick={() => onGenerateReview(code)}
         className="w-max absolute bottom-3 right-3 z-50 bg-green-500 p-2 rounded hover:bg-green-700 active: translate-y-1 disabled:pointer-events-none disabled:cursor-not-allowed"
       >
         Generate Review
